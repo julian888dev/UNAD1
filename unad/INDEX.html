@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Actividad - Arquitectura Cliente/Servidor y Diseño Centrado en Usuario</title>
+  <meta name="description" content="Actividad RAC1: Arquitectura Cliente/Servidor, diseño centrado en el usuario e importancia de la investigación en el territorio - Julian Segura" />
+
+  <style>
+    /* Reset suave */
+    *, *::before, *::after { box-sizing: border-box; }
+    :root{
+      --bg: #fbfbfb;
+      --card: #ffffff;
+      --accent: #0f766e;
+      --muted: #6b7280;
+      --title: #032d2b;
+      --radius: 12px;
+      --max-width: 980px;
+      --gap: 1rem;
+      font-family: Inter, "Helvetica Neue", Arial, sans-serif;
+      color-scheme: light;
+    }
+    body{
+      margin:0;
+      background: linear-gradient(180deg, #f7f9f9 0%, var(--bg) 100%);
+      color: var(--title);
+      line-height:1.5;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding: 2rem 1rem;
+      display:flex;
+      justify-content:center;
+    }
+
+    /* Página contenedor */
+    .page {
+      width:100%;
+      max-width: var(--max-width);
+      background: transparent;
+    }
+
+    /* Tarjeta de portada */
+    .cover {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: 0 6px 20px rgba(2,6,23,0.06);
+      margin-bottom: var(--gap);
+      text-align:center;
+    }
+    .cover__title {
+      font-size: 1.6rem;
+      font-weight:700;
+      color: var(--accent);
+      margin: 0 0 .4rem 0;
+    }
+    .cover__subtitle { margin:0; color:var(--muted); font-weight:600; }
+    .cover__meta { margin-top:1.25rem; color:var(--muted); }
+
+    /* Contenido principal */
+    .content {
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: var(--gap);
+    }
+
+    .section {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      box-shadow: 0 4px 14px rgba(2,6,23,0.04);
+    }
+    .section + .section { margin-top: .8rem; }
+
+    .section__title {
+      font-size: 1.05rem;
+      color: var(--accent);
+      margin: 0 0 .6rem 0;
+      display:flex;
+      align-items:center;
+      gap:.6rem;
+    }
+    .section__title small { color: var(--muted); font-weight:600; }
+
+    .text { color: #0b1720; margin:0 0 .75rem 0; }
+    .text--muted { color: var(--muted); font-size: .95rem; }
+
+    ul.bullets { padding-left:1.15rem; margin: .25rem 0 .75rem 0; }
+    .obj-list { display:grid; gap:.4rem; margin:0; padding-left:1.05rem; }
+
+    /* Grid para preguntas y mapa */
+    .two-col {
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    @media(min-width:900px){
+      .two-col { grid-template-columns: 1fr 420px; align-items:start; }
+    }
+
+    /* Mapa conceptual (imagen) */
+    .map {
+      border-radius: 10px;
+      overflow: hidden;
+      background: linear-gradient(180deg,#f8fafc,#ffffff);
+      padding:.75rem;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+    .map img { width:100%; height:auto; display:block; border-radius:8px; box-shadow: 0 6px 18px rgba(2,6,23,0.06); }
+
+    /* Footer / referencias */
+    .refs { font-size:.95rem; color:var(--muted); }
+    .ref-item { margin-bottom:.6rem; }
+
+    /* Botones y ayudas visuales */
+    .note {
+      background: #fff8ec;
+      border-left: 4px solid #f6c85f;
+      padding:.6rem .8rem;
+      border-radius:8px;
+      color:#614200;
+      font-size:.95rem;
+    }
+
+    /* Accesibilidad: foco visible */
+    a:focus, button:focus { outline: 3px solid rgba(15,118,110,0.18); outline-offset:2px; }
+
+    /* Títulos internos */
+    h2.h2 { margin:.25rem 0 .6rem 0; font-size:1rem; color:var(--title); }
+
+    /* Estilo citas (inline APA) */
+    .cite { font-style:italic; color:var(--muted); font-size:.95rem; }
+
+  </style>
+</head>
+<body>
+  <main class="page" role="main">
+    <!-- Portada -->
+    <header class="cover" role="banner" aria-label="Portada de la actividad">
+      <h1 class="cover__title">Actividad RAC1 – Arquitectura Cliente/Servidor y Diseño Centrado en el Usuario</h1>
+      <p class="cover__subtitle">Fundamentos de Análisis de Requisitos</p>
+      <p class="cover__meta">
+        Estudiante: <strong>Julian Andres Segura</strong> &nbsp; • &nbsp; Curso:  Desarrollo de Aplicaciones para la Web<br/>
+        Universidad Nacional Abierta y a Distancia UNAD &nbsp; • &nbsp; 2025
+      </p>
+    </header>
+
+    <section class="content">
+
+      <!-- Introducción -->
+      <article class="section section--intro" id="introduccion" aria-labelledby="introTitle">
+        <h2 class="section__title" id="introTitle">Introducción</h2>
+        <p class="text">
+          La actividad propuesta aborda dos temas centrales: la arquitectura Cliente/Servidor en la programación web dinámica y el diseño
+          centrado en el usuario como eje del análisis de requisitos. A partir de la lectura de los referentes bibliográficos y de la
+          investigación en el territorio, se desarrollarán respuestas argumentadas, un recurso web informativo y un mapa conceptual que
+          evidencia la comprensión crítica del tema.
+        </p>
+      </article>
+
+      <!-- Objetivos -->
+      <article class="section section--objectives" id="objetivos" aria-labelledby="objTitle">
+        <h2 class="section__title" id="objTitle">Objetivos</h2>
+
+        <p class="text"><strong>Objetivo general</strong></p>
+        <p class="text text--muted">Reconocer la importancia de la arquitectura Cliente/Servidor y del diseño centrado en el usuario para diseñar
+          aplicaciones web que cumplan estándares y requerimientos del cliente mediante interfaces optimizadas y amigables.</p>
+
+        <p class="text"><strong>Objetivos específicos</strong></p>
+        <ul class="obj-list">
+          <li>Analizar la función de la arquitectura Cliente/Servidor en entornos web dinámicos.</li>
+          <li>Argumentar la importancia de la investigación en el territorio para el análisis de requisitos y las especificaciones técnicas.</li>
+          <li>Diseñar un recurso web informativo que sintetice los conceptos en un formato claro y accesible.</li>
+        </ul>
+      </article>
+
+      <!-- Respuestas orientadoras en columna izquierda + Mapa a la derecha -->
+      <div class="two-col">
+
+        <article class="section section--answers" aria-labelledby="answersTitle">
+          <h2 class="section__title" id="answersTitle">Respuestas a las preguntas orientadoras</h2>
+
+          <h3 class="h2">a) ¿Qué papel tiene la arquitectura Cliente/Servidor en la programación web dinámica?</h3>
+          <p class="text">
+            La arquitectura Cliente/Servidor es el patrón básico que organiza cómo se comunican las partes de una aplicación web: el cliente (navegador o app)
+            solicita servicios y el servidor responde procesando datos y gestionando recursos. En programación web dinámica este patrón:
+          </p>
+          <ul class="bullets">
+            <li>Permite la separación de responsabilidades entre presentación (cliente) y procesamiento/datos (servidor).</li>
+            <li>Facilita la escalabilidad y mantenimiento, pues las capas pueden evolucionar independientemente.</li>
+            <li>Hace posible la interacción en tiempo real y el manejo de estados cuando se combinan con APIs, WebSockets o arquitecturas REST/GraphQL.</li>
+          </ul>
+          <p class="text text--muted cite">(Blog Infranetworking, 2019; Blog ReactiveProgramming, 2021).</p>
+
+          <h3 class="h2">b) ¿Qué importancia tiene la investigación en el territorio para el análisis de requisitos y especificaciones técnicas en programación web?</h3>
+          <p class="text">
+            La investigación en el territorio —o investigación contextual— aporta el conocimiento real de los usuarios, su entorno y las condiciones de uso.
+            Para el análisis de requisitos es clave porque:
+          </p>
+          <ul class="bullets">
+            <li>Permite identificar necesidades reales, no supuestas, y priorizar requisitos según impacto real.</li>
+            <li>Reduce riesgos de malentendidos entre cliente, usuario y equipo técnico, mejorando la validez de las especificaciones.</li>
+            <li>Informa decisiones de diseño centrado en el usuario: accesibilidad, flujos, lenguaje y restricciones técnicas propias del contexto.</li>
+          </ul>
+          <p class="text text--muted cite">(Granollers, 2012; Luján, 2002).</p>
+
+          <div style="margin-top:.8rem;" class="note" role="note">
+            Recuerda referenciar en el foro cada respuesta con las bibliografías consultadas siguiendo APA 7.0.
+          </div>
+        </article>
+
+        <!-- Mapa conceptual: imagen -->
+        <aside class="section map" aria-labelledby="mapTitle">
+          <h2 class="section__title" id="mapTitle">Mapa conceptual</h2>
+          <!-- Sustituye el src por la ruta de tu imagen si tiene otro nombre -->
+          <img src="" alt="Mapa conceptual" />
+          
+        </aside>
+
+      </div>
+
+      <!-- Conclusiones -->
+      <article class="section section--conclusions" aria-labelledby="conclTitle">
+        <h2 class="section__title" id="conclTitle">Conclusiones</h2>
+        <p class="text">
+          La arquitectura Cliente/Servidor sostiene la mayor parte de las aplicaciones web dinámicas al distribuir responsabilidades y permitir
+          escalabilidad. Por su parte, la investigación en el territorio enriquece el análisis de requisitos, porque conecta el desarrollo con la realidad
+          del usuario y reduce el riesgo de construir soluciones que no respondan a necesidades reales. Finalmente, integrar un diseño centrado en el usuario
+          desde el análisis de requisitos favorece la creación de interfaces útiles, accesibles y sostenibles en el tiempo.
+        </p>
+      </article>
+
+      <!-- Referencias -->
+      <footer class="section refs" aria-labelledby="refsTitle">
+        <h2 class="section__title" id="refsTitle">Referencias bibliográficas (APA 7ª ed.)</h2>
+
+        <div class="ref-item">
+          Blog Infranetworking. (2019). <em>Modelo cliente servidor</em>. Recuperado de https://blog.infranetworking.com/modelo-cliente-servidor/
+        </div>
+        <div class="ref-item">
+          Blog ReactiveProgramming. (2021). <em>La arquitectura Cliente-Servidor</em>. Recuperado de https://reactiveprogramming.io/blog/es/estilosarquitectonicos/cliente-servidor
+        </div>
+        <div class="ref-item">
+          Granollers, T. (2012). <em>Diseño de sistemas interactivos centrados en el usuario</em> (pp. 23–49). Editorial UOC.
+          Recuperado de https://elibronet.bibliotecavirtual.unad.edu.co/es/ereader/unad/56326?page=24
+        </div>
+        <div class="ref-item">
+          Luján, S. (2002). <em>Programación de aplicaciones web: historia, principios básicos y clientes web</em> (pp. 39–89).
+          Recuperado de https://rua.ua.es/dspace/bitstream/10045/16995/1/sergio_lujanprogramacion_de_aplicaciones_web.pdf
+        </div>
+
+        <p class="text text--muted" style="margin-top:.6rem;">
+          Nota: Si en el foro debes usar referencias más específicas (por ejemplo con autor de los blogs o fecha exacta), reemplaza las citas anteriores
+          por la forma exacta que te pidan y agrega DOI o fecha de consulta cuando sea necesario.
+        </p>
+      </footer>
+
+    </section>
+  </main>
+</body>
+</html>
